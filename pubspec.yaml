@@ -1,5 +1,5 @@
 name: responsive_layout_grid_demo
-description: A Flutter application to demo the ResponsiveLayoutGrid Widget
+description: A Flutter application to demo the ResponsiveLayoutGrid widget.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
