@@ -3,7 +3,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:responsive_layout_grid/src/responsive_layout_grid.dart';
+import 'package:responsive_layout_grid/responsive_layout_grid.dart';
 
 import 'scroll_view_with_scroll_bar.dart';
 

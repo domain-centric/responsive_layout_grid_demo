@@ -3,7 +3,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:responsive_layout_grid/src/responsive_layout_grid.dart';
+import 'package:responsive_layout_grid/responsive_layout_grid.dart';
 import 'package:responsive_layout_grid_demo/random.dart';
 import 'package:responsive_layout_grid_demo/scroll_view_with_scroll_bar.dart';
 
@@ -11,9 +11,8 @@ class AlignmentExamplePage extends StatelessWidget {
   const AlignmentExamplePage({Key? key}) : super(key: key);
   static const title = 'Alignment';
 
-  //TODO update to correct demo project and source code file;
   static const urlToSourceCode =
-      'https://github.com/domain-centric/responsive_layout_grid';
+      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/alignment_example_page.dart';
 
   @override
   Widget build(BuildContext context) => Scaffold(

@@ -3,10 +3,10 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:responsive_layout_grid/src/responsive_layout_grid.dart';
+import 'package:responsive_layout_grid/responsive_layout_grid.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../responsive_layout_grid_demo/lib/alignment_example_page.dart';
+import 'alignment_example_page.dart';
 import 'columns_example_page.dart';
 import 'form_example_page.dart';
 import 'news_paper_example_page.dart';
@@ -48,7 +48,7 @@ class ResponsiveHomeGrid extends StatelessWidget {
             position: CellPosition.nextColumn(),
             child: OpenUrlButton(
               text: '${ColumnsExamplePage.title} Source Code',
-              url: FormExamplePage.urlToSourceCode,
+              url: ColumnsExamplePage.urlToSourceCode,
             ),
           ),
           const ResponsiveLayoutCell(

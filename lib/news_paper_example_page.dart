@@ -11,9 +11,8 @@ class NewsPaperExamplePage extends StatelessWidget {
   const NewsPaperExamplePage({Key? key}) : super(key: key);
   static const title = 'News Paper';
 
-  //TODO update to correct demo project and source code file;
   static const urlToSourceCode =
-      'https://github.com/domain-centric/responsive_layout_grid';
+      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/news_paper_example_page.dart';
   static const double gutterSize = 32;
 
   @override

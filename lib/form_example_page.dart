@@ -3,7 +3,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:responsive_layout_grid/src/responsive_layout_grid.dart';
+import 'package:responsive_layout_grid/responsive_layout_grid.dart';
 
 const maxNumberOfColumns = 8;
 
@@ -11,9 +11,8 @@ class FormExamplePage extends StatelessWidget {
   const FormExamplePage({Key? key}) : super(key: key);
   static const title = 'Form';
 
-  //TODO update to correct demo project and source code file;
   static const urlToSourceCode =
-      'https://github.com/domain-centric/responsive_layout_grid';
+      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/form_example_page.dart';
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -106,36 +105,6 @@ class ResponsiveFormGrid extends StatelessWidget {
           child: Text(title,
               style: const TextStyle(color: Colors.white, fontSize: 18)),
         ),
-      );
-
-  /// TODO remove later
-  /// Used with gray background
-  ResponsiveLayoutCell createTextFieldNilsStyle({
-    required String label,
-    required CellPosition position,
-    ColumnSpan columnSpan = const ColumnSpan.size(2),
-    int maxLines = 1,
-  }) =>
-      ResponsiveLayoutCell(
-        position: position,
-        columnSpan: columnSpan,
-        child: Column(children: [
-          Align(alignment: Alignment.topLeft, child: Text(label)),
-          TextFormField(
-            maxLines: maxLines,
-            decoration: const InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              isDense: true,
-              border: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent, width: 0)),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent, width: 0)),
-              disabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent, width: 0)),
-            ),
-          ),
-        ]),
       );
 
   ResponsiveLayoutCell _createTextField({
