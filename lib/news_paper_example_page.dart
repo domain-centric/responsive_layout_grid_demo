@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_layout_grid/responsive_layout_grid.dart';
 import 'random.dart';
-import 'scroll_view_with_scroll_bar.dart';
 
 class NewsPaperExamplePage extends StatelessWidget {
   const NewsPaperExamplePage({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class NewsPaperExamplePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('$title Example (resize me!)'),
       ),
-      body: ScrollViewWithScrollBar(
+      body: SingleChildScrollView(
         child: Padding(
             padding: const EdgeInsets.all(8),
             child: ResponsiveLayoutGrid(

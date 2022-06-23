@@ -5,7 +5,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_layout_grid/responsive_layout_grid.dart';
 import 'package:responsive_layout_grid_demo/random.dart';
-import 'package:responsive_layout_grid_demo/scroll_view_with_scroll_bar.dart';
 
 class AlignmentExamplePage extends StatelessWidget {
   const AlignmentExamplePage({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class AlignmentExamplePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('$title Example (resize me!)'),
       ),
-      body: ScrollViewWithScrollBar(
+      body: SingleChildScrollView(
         child: Padding(
             padding: const EdgeInsets.all(8),
             child: ResponsiveLayoutGrid(
