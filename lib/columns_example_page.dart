@@ -40,7 +40,7 @@ class MyLayoutFactory extends ResponsiveLayoutFactory {
           leftColumn: i,
           columnSpan: 1,
           row: 1,
-          cell:  Container(//TODO:  Why doesn't it take the full size?
+          cell:  Container(
               color: Colors.white,
               child: Center(
                 child: Text("Column $i"),
