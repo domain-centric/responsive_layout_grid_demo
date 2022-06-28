@@ -20,31 +20,33 @@ class ColumnsExamplePage extends StatelessWidget {
       body: Container(
           color: Colors.yellow,
           padding: const EdgeInsets.all(8),
-          child: Container(
-              color: Colors.grey,
-              child: ResponsiveLayoutGrid(
-                layoutFactory: MyLayoutFactory(),
-                maxNumberOfColumns: 6,
-              ))));
+          child:  Container(
+                color: Colors.grey,
+                child: ResponsiveLayoutGrid(
+                  layoutFactory: MyLayoutFactory(),
+                  maxNumberOfColumns: 6,
+                )),
+          ));
 }
 
 /// A custom [ResponsiveLayoutFactory] to create the exact number of
 /// [LayoutCell]s as available number of columns
 class MyLayoutFactory extends ResponsiveLayoutFactory {
   @override
-  Layout create(int numberOfColumns, List<Widget> children) {
-    var layout = Layout(numberOfColumns);
-    for (int i = 1; i <= numberOfColumns; i++) {
+  Layout create(LayoutDimensions layoutDimensions, List<Widget> children) {
+    var layout = Layout(layoutDimensions);
+    for (int i = 1; i <= layoutDimensions.numberOfColumns; i++) {
       layout.addCell(
           leftColumn: i,
           columnSpan: 1,
           row: 1,
-          cell: Container(
-            color: Colors.white,
-            child: Center(
-              child: Text("Column $i"),
+          cell:  Container(//TODO:  Why doesn't it take the full size?
+              color: Colors.white,
+              child: Center(
+                child: Text("Column $i"),
+              ),
             ),
-          ));
+          );
     }
     return layout;
   }
