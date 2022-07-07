@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        title: Text('$ResponsiveLayoutGrid (resize me!)'),
+        title: const Text('ResponsiveLayoutGrid (resize me!)'),
       ),
       body: const SingleChildScrollView(
         child:
