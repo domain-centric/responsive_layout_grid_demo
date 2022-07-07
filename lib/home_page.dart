@@ -4,12 +4,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_layout_grid/responsive_layout_grid.dart';
+import 'package:responsive_layout_grid_demo/row_alignment_example.dart';
+import 'package:responsive_layout_grid_demo/row_height_examample.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import 'alignment_example_page.dart';
-import 'columns_example_page.dart';
-import 'form_example_page.dart';
-import 'news_paper_example_page.dart';
+import 'cell_alignment_example.dart';
+import 'column_example.dart';
+import 'form_example.dart';
+import 'news_paper_example.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -33,82 +35,110 @@ class ResponsiveHomeGrid extends StatelessWidget {
         maxNumberOfColumns: 2,
         children: [
           ResponsiveLayoutCell(
-            position: const CellPosition.nextRow(),
+            position: CellPosition.nextRow(),
             columnSpan: ColumnSpan.remainingWidth(),
             child: const GroupBar("Examples"),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextRow(),
-            child: NavigateToPageButton(
+            child: const NavigateToPageButton(
               text: ColumnsExamplePage.title,
               page: ColumnsExamplePage(),
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextColumn(),
-            child: OpenUrlButton(
+            child: const OpenUrlButton(
               text: '${ColumnsExamplePage.title} Source Code',
               url: ColumnsExamplePage.urlToSourceCode,
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextRow(),
-            child: NavigateToPageButton(
+            child: const NavigateToPageButton(
               text: FormExamplePage.title,
               page: FormExamplePage(),
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextColumn(),
-            child: OpenUrlButton(
+            child: const OpenUrlButton(
               text: '${FormExamplePage.title} Source Code',
               url: FormExamplePage.urlToSourceCode,
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextRow(),
-            child: NavigateToPageButton(
+            child: const NavigateToPageButton(
               text: NewsPaperExamplePage.title,
               page: NewsPaperExamplePage(),
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextColumn(),
-            child: OpenUrlButton(
+            child: const OpenUrlButton(
               text: '${NewsPaperExamplePage.title} Source Code',
               url: NewsPaperExamplePage.urlToSourceCode,
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextRow(),
-            child: NavigateToPageButton(
-              text: AlignmentExamplePage.title,
-              page: AlignmentExamplePage(),
-            ),
-          ),
-          const ResponsiveLayoutCell(
-            position: CellPosition.nextColumn(),
-            child: OpenUrlButton(
-              text: '${AlignmentExamplePage.title} Source Code',
-              url: AlignmentExamplePage.urlToSourceCode,
+            child: const NavigateToPageButton(
+              text: RowHeightExamplePage.title,
+              page: RowHeightExamplePage(),
             ),
           ),
           ResponsiveLayoutCell(
-            position: const CellPosition.nextRow(),
+            position: CellPosition.nextColumn(),
+            child: const OpenUrlButton(
+              text: '${RowHeightExamplePage.title} Source Code',
+              url: RowHeightExamplePage.urlToSourceCode,
+            ),
+          ),
+          ResponsiveLayoutCell(
+            position: CellPosition.nextRow(),
+            child: const NavigateToPageButton(
+              text: RowAlignmentExamplePage.title,
+              page: RowAlignmentExamplePage(),
+            ),
+          ),
+          ResponsiveLayoutCell(
+            position: CellPosition.nextColumn(),
+            child: const OpenUrlButton(
+              text: '${RowAlignmentExamplePage.title} Source Code',
+              url: RowAlignmentExamplePage.urlToSourceCode,
+            ),
+          ),
+          ResponsiveLayoutCell(
+            position: CellPosition.nextRow(),
+            child: const NavigateToPageButton(
+              text: CellAlignmentExamplePage.title,
+              page: CellAlignmentExamplePage(),
+            ),
+          ),
+          ResponsiveLayoutCell(
+            position: CellPosition.nextColumn(),
+            child: const OpenUrlButton(
+              text: '${CellAlignmentExamplePage.title} Source Code',
+              url: CellAlignmentExamplePage.urlToSourceCode,
+            ),
+          ),
+          ResponsiveLayoutCell(
+            position: CellPosition.nextRow(),
             columnSpan: ColumnSpan.remainingWidth(),
             child: const GroupBar("Documentation"),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextRow(),
-            child: OpenUrlButton(
+            child: const OpenUrlButton(
               text: 'Material Design V2',
               url:
                   'https://material.io/design/layout/responsive-layout-grid.html',
             ),
           ),
-          const ResponsiveLayoutCell(
+          ResponsiveLayoutCell(
             position: CellPosition.nextColumn(),
-            child: OpenUrlButton(
+            child: const OpenUrlButton(
               text: 'Material Design V3',
               url:
                   'https://m3.material.io/foundations/adaptive-design/large-screens/overview',
@@ -160,9 +190,11 @@ class ButtonText extends StatelessWidget {
   const ButtonText(this.text, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
-        child: Text(text),
+  Widget build(BuildContext context) => Center(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 16, 0, 16),
+          child: Text(text),
+        ),
       );
 }
 

@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_layout_grid/responsive_layout_grid.dart';
+
 import 'random.dart';
 
 class NewsPaperExamplePage extends StatelessWidget {
@@ -11,7 +12,7 @@ class NewsPaperExamplePage extends StatelessWidget {
   static const title = 'News Paper';
 
   static const urlToSourceCode =
-      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/news_paper_example_page.dart';
+      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/news_paper_example.dart';
   static const double gutterSize = 32;
 
   @override
@@ -35,7 +36,7 @@ class NewsPaperExamplePage extends StatelessWidget {
 
   ResponsiveLayoutCell _createBigTitle() => ResponsiveLayoutCell(
       columnSpan: ColumnSpan.remainingWidth(),
-      position: const CellPosition.nextRow(CellAlignment.justify),
+      position: CellPosition.nextRow(rowAlignment: RowAlignment.justify),
       child: Center(
         child: Text(
           randomLoremIpsumTitle(),

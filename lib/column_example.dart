@@ -10,43 +10,43 @@ class ColumnsExamplePage extends StatelessWidget {
   static const title = 'Columns';
 
   static const urlToSourceCode =
-      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/columns_example_page.dart';
+      'https://github.com/domain-centric/responsive_layout_grid_demo/blob/main/lib/column_example.dart';
 
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: const Text('$title Example (resize me!)'),
       ),
-      body: Container(
-          color: Colors.yellow,
-          padding: const EdgeInsets.all(8),
-          child:  Container(
-                color: Colors.grey,
-                child: ResponsiveLayoutGrid(
-                  layoutFactory: MyLayoutFactory(),
-                  maxNumberOfColumns: 6,
-                )),
-          ));
+      body:
+          SingleChildScrollView(
+        child:
+            ResponsiveLayoutGrid(
+              padding: const EdgeInsets.all(8),
+              layoutFactory: MyLayoutFactory(),
+              maxNumberOfColumns: 6,
+            ),
+      ));
 }
 
 /// A custom [ResponsiveLayoutFactory] to create the exact number of
-/// [LayoutCell]s as available number of columns
+/// [LayoutCell]s as the available number of columns
 class MyLayoutFactory extends ResponsiveLayoutFactory {
   @override
   Layout create(LayoutDimensions layoutDimensions, List<Widget> children) {
     var layout = Layout(layoutDimensions);
     for (int i = 1; i <= layoutDimensions.numberOfColumns; i++) {
       layout.addCell(
-          leftColumn: i,
-          columnSpan: 1,
-          row: 1,
-          cell:  Container(
-              color: Colors.white,
-              child: Center(
-                child: Text("Column $i"),
-              ),
-            ),
-          );
+        leftColumn: i,
+        columnSpan: 1,
+        rowHeightMode: RowHeight.expanded(minHeight: 100),
+        rowNumber: 1,
+        cell: Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Text("Column $i"),
+          ),
+        ),
+      );
     }
     return layout;
   }
