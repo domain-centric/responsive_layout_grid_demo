@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "name": "lib\\main.dart",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib\\main.dart"
+        },
+        {
+            "name": "tool\\publish_as_web_app.dart",
+            "type": "dart",
+            "request": "launch",
+            "program": "tool\\publish_as_web_app.dart"
+        }
+    ]
+}

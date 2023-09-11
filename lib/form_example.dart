@@ -21,7 +21,7 @@ class FormExamplePage extends StatelessWidget {
         ),
         body: const SingleChildScrollView(
           child:
-              Padding(padding: EdgeInsets.all(8), child: ResponsiveFormGrid()),
+              ResponsiveFormGrid(),
         ),
       );
 }
@@ -31,6 +31,7 @@ class ResponsiveFormGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ResponsiveLayoutGrid(
+    padding: const EdgeInsets.all(8),
         maxNumberOfColumns: maxNumberOfColumns,
         children: [
           _createGroupBar('Participant'),
